@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "name": "Amr Al-Kubati",
+    "handle": "ROOT",
+    "title": "Developer // Cybersecurity // Entrepreneur",
+    "bio": "Building systems, breaking them, and launching products from scratch. Self-taught. Full-time. Based in Canada.",
+    "status": "Available",
+    "location": "Canada",
+    "github": "https://github.com/4alkubati",
+    "formspree": "xkoklbog"
+  },
+  "commands": [
+    { "cmd": "portfolio",  "desc": "View full portfolio",         "route": "pages/portfolio.html" },
+    { "cmd": "projects",   "desc": "Browse projects",             "route": "pages/portfolio.html#projects" },
+    { "cmd": "skills",     "desc": "View skills",                 "route": "pages/portfolio.html#skills" },
+    { "cmd": "certs",      "desc": "View certifications",         "route": "pages/portfolio.html#certs" },
+    { "cmd": "contact",    "desc": "Get in touch",                "route": "pages/portfolio.html#contact" },
+    { "cmd": "whoami",     "desc": "About ROOT",                  "route": null },
+    { "cmd": "clear",      "desc": "Clear terminal",              "route": null },
+    { "cmd": "help",       "desc": "List all commands",           "route": null }
+  ],
+  "projects": [
+    {
+      "id": "swing-by",
+      "title": "Swing By",
+      "tag": "Entrepreneurship",
+      "desc": "Service marketplace connecting clients to professionals across any category. Mobile-first, built from scratch.",
+      "status": "In Progress",
+      "link": null
+    },
+    {
+      "id": "automation",
+      "title": "Automation Business",
+      "tag": "Development",
+      "desc": "End-to-end workflow automation solutions for small businesses. First venture into tech.",
+      "status": "Active",
+      "link": null
+    },
+    {
+      "id": "security-lab",
+      "title": "Security Lab",
+      "tag": "Cybersecurity",
+      "desc": "Self-directed research, CTF practice, network scanning, and vulnerability analysis. Ongoing.",
+      "status": "Ongoing",
+      "link": null
+    },
+    {
+      "id": "portfolio",
+      "title": "This Portfolio",
+      "tag": "Dev + Ops",
+      "desc": "Designed and deployed from scratch. Custom domain, Cloudflare CDN, GitHub Pages. Zero cost.",
+      "status": "Live",
+      "link": "https://4alkubati.com"
+    }
+  ],
+  "skills": [
+    { "name": "Cybersecurity",  "level": 55 },
+    { "name": "Automation",     "level": 75 },
+    { "name": "Git / GitHub",   "level": 60 },
+    { "name": "Networking",     "level": 50 },
+    { "name": "DNS / Infra",    "level": 55 },
+    { "name": "Business Dev",   "level": 80 }
+  ],
+  "languages": [
+    { "name": "Python",  "desc": "Automation, scripting, data processing",       "badge": "PY",  "color": "#4B8BBE" },
+    { "name": "C / C++", "desc": "Systems programming, low-level control",        "badge": "C++", "color": "#00599C" },
+    { "name": "R",       "desc": "Statistical computing, data analysis",          "badge": "R",   "color": "#1A5276" },
+    { "name": "Go",      "desc": "Backend services, concurrent systems",          "badge": "GO",  "color": "#00ACD7" },
+    { "name": "SQL",     "desc": "Database queries, data management",             "badge": "SQL", "color": "#E48E00" },
+    { "name": "Bash",    "desc": "Shell scripting, Linux automation",             "badge": "$_",  "color": "#1D1D1D" }
+  ],
+  "certifications": [
+    { "name": "CompTIA Security+", "org": "CompTIA", "tag": "Cybersecurity",   "badge": "SEC+",  "color": "#CC0000", "status": "Verified" },
+    { "name": "CompTIA A+",        "org": "CompTIA", "tag": "IT Fundamentals", "badge": "A+",    "color": "#CC0000", "status": "Verified" },
+    { "name": "CompTIA Network+",  "org": "CompTIA", "tag": "Networking",      "badge": "NET+",  "color": "#CC0000", "status": "Verified" },
+    { "name": "CompTIA Linux+",    "org": "CompTIA", "tag": "Linux Systems",   "badge": "LNX+",  "color": "#CC0000", "status": "Verified" },
+    { "name": "CompTIA PenTest+",  "org": "CompTIA", "tag": "Penetration Testing", "badge": "PEN+",  "color": "#CC0000", "status": "Verified" },
+    { "name": "CompTIA CySA+",     "org": "CompTIA", "tag": "Security Analytics",  "badge": "CySA+", "color": "#CC0000", "status": "Verified" },
+    { "name": "Cisco CCNA",        "org": "Cisco",   "tag": "Networking",      "badge": "CCNA",  "color": "#1B5FA8", "status": "Verified" }
+  ]
+}

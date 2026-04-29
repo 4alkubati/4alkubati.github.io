@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROOT // 4alkubati.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background: #020403;
+    }
+
+    /* ── TERMINAL WINDOW ── */
+    #terminal-wrap {
+      width: 100%;
+      max-width: 780px;
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 24px 24px;
+      position: relative;
+    }
+
+    /* header bar */
+    .term-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(95,46,27,0.2);
+    }
+    .term-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .term-dot-r { background: #5F2E1B; }
+    .term-dot-y { background: #7a5030; }
+    .term-dot-g { background: #39ff8a; opacity: .5; }
+    .term-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(95,46,27,0.5);
+      letter-spacing: 2px;
+      margin-left: 8px;
+    }
+
+    /* output area */
+    #term-output {
+      flex: 1;
+      overflow-y: auto;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.9;
+      padding-bottom: 12px;
+    }
+    #term-output::-webkit-scrollbar { width: 3px; }
+    #term-output::-webkit-scrollbar-thumb { background: rgba(95,46,27,0.3); }
+
+    /* line types */
+    .term-line        { color: #5F2E1B; display: block; }
+    .term-line.bright { color: #a05030; }
+    .term-line.white  { color: #c8c4bc; }
+    .term-line.muted  { color: #4a4540; }
+    .term-line.warn   { color: #7a3a20; }
+    .term-line.error  { color: #cc3300; }
+    .term-line.prompt { color: #a05030; }
+
+    /* input row */
+    .term-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(95,46,27,0.15);
+    }
+    .term-prompt-sym {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #a05030;
+      white-space: nowrap;
+    }
+    #term-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #c8c4bc;
+      caret-color: #a05030;
+    }
+
+    /* skip counter */
+    #skip-counter {
+      display: none;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #3a3530;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    #skip-counter:hover { color: #a05030; }
+
+    /* skip button */
+    #skip-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #3a3530;
+      background: none;
+      border: 1px solid rgba(95,46,27,0.2);
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      text-transform: uppercase;
+    }
+    #skip-btn:hover { color: #a05030; border-color: rgba(95,46,27,0.5); }
+
+    @media (max-width: 600px) {
+      #terminal-wrap { padding: 20px 16px 16px; }
+      #term-output { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip button — always visible -->
+  <button id="skip-btn" onclick="skipToPortfolio()">// Skip →</button>
+
+  <!-- Terminal window -->
+  <div id="terminal-wrap">
+    <div class="term-bar">
+      <div class="term-dot term-dot-r"></div>
+      <div class="term-dot term-dot-y"></div>
+      <div class="term-dot term-dot-g"></div>
+      <span class="term-title">ROOT@4ALKUBATI — bash</span>
+    </div>
+
+    <div id="term-output"></div>
+
+    <div class="term-input-row">
+      <span class="term-prompt-sym">root@4alkubati:~$</span>
+      <input id="term-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="type a command...">
+    </div>
+
+    <div id="skip-counter" onclick="skipToPortfolio()"></div>
+  </div>
+
+  <script src="js/terminal.js"></script>
+</body>
+</html>

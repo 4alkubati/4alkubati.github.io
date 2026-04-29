@@ -1,0 +1,170 @@
+/* ============================================================
+   style.css — Global styles for 4alkubati.github.io
+   Palette: #020403 | #141413 | #1A2324 | #5F2E1B | #a05030
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color tokens — change here, updates everywhere */
+  --col-black:    #020403;
+  --col-bg:       #141413;
+  --col-card:     #1A2324;
+  --col-border:   #22302e;
+  --col-rust:     #5F2E1B;
+  --col-rust-lt:  #a05030;
+  --col-text:     #c8c4bc;
+  --col-muted:    #4a4540;
+  --col-green:    #39ff8a;
+  --col-sidebar:  #0a0c0b;
+
+  /* Typography */
+  --font-body:    'Rajdhani', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+  --font-display: 'Orbitron', monospace;
+
+  /* Spacing */
+  --gap-sm:  12px;
+  --gap-md:  24px;
+  --gap-lg:  48px;
+  --gap-xl:  80px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--col-bg);
+  color: var(--col-text);
+  min-height: 100vh;
+}
+
+/* Scanline overlay — applied via body::after on any page */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent, transparent 2px,
+    rgba(95, 46, 27, 0.008) 2px,
+    rgba(95, 46, 27, 0.008) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: #e8e4dc;
+}
+
+a {
+  color: var(--col-rust-lt);
+  text-decoration: none;
+  transition: color .2s;
+}
+a:hover { color: var(--col-text); }
+
+/* ── UTILITY ── */
+.mono  { font-family: var(--font-mono); }
+.rust  { color: var(--col-rust-lt); }
+.muted { color: var(--col-muted); }
+.green { color: var(--col-green); }
+
+/* ── SHARED SECTION HEADER ── */
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(95, 46, 27, 0.4);
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--col-rust-lt);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(95, 46, 27, 0.4);
+}
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(95, 46, 27, 0.3), transparent);
+}
+
+/* ── SHARED BUTTON ── */
+.btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e8e4dc;
+  background: var(--col-rust);
+  border: none;
+  padding: 14px 32px;
+  cursor: pointer;
+  display: inline-block;
+  transition: box-shadow .2s, transform .2s;
+  text-decoration: none;
+}
+.btn:hover {
+  box-shadow: 0 0 30px rgba(95, 46, 27, 0.6);
+  transform: translateY(-1px);
+  color: #e8e4dc;
+}
+
+/* ── SHARED CARD ── */
+.card {
+  background: var(--col-card);
+  border: 1px solid var(--col-border);
+  padding: 26px;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--col-rust), transparent);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.card:hover {
+  border-color: rgba(95, 46, 27, 0.35);
+  box-shadow: 0 0 24px rgba(95, 46, 27, 0.08);
+  transform: translateY(-3px);
+}
+.card:hover::before { opacity: 1; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--col-black); }
+::-webkit-scrollbar-thumb {
+  background: rgba(95, 46, 27, 0.3);
+  border-radius: 2px;
+}
+
+/* ── RESPONSIVE GRID HELPERS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-sm); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm); }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  :root { --gap-xl: 50px; --gap-lg: 28px; }
+}

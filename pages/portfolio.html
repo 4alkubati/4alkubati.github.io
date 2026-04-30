@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio // ROOT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
@@ -161,6 +162,9 @@
       width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(26,35,36,0.4) 0%, transparent 65%);
       pointer-events: none;
+      /* CLS fix: isolate from layout — prevents shift contribution */
+      contain: layout paint;
+      will-change: transform;
     }
     .hero-name {
       font-family: var(--font-display);
@@ -243,6 +247,8 @@
       .proj-grid, .skills-grid, .lang-grid, .contact-wrap { grid-template-columns: 1fr; }
       .hero { padding: 80px 28px 60px; min-height: auto; }
       .sec { padding: 50px 24px; }
+      /* INP fix: kill grid animation on mobile — blocks interaction */
+      .hero-grid { animation: none; }
     }
   </style>
 </head>

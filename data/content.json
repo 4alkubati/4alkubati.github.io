@@ -10,11 +10,11 @@
     "formspree": "xkoklbog"
   },
   "commands": [
-    { "cmd": "portfolio",  "desc": "View full portfolio",         "route": "pages/portfolio.html" },
-    { "cmd": "projects",   "desc": "Browse projects",             "route": "pages/portfolio.html#projects" },
-    { "cmd": "skills",     "desc": "View skills",                 "route": "pages/portfolio.html#skills" },
-    { "cmd": "certs",      "desc": "View certifications",         "route": "pages/portfolio.html#certs" },
-    { "cmd": "contact",    "desc": "Get in touch",                "route": "pages/portfolio.html#contact" },
+    { "cmd": "portfolio",  "desc": "View full portfolio",         "route": "portfolio/" },
+    { "cmd": "projects",   "desc": "Browse projects",             "route": "portfolio/#projects" },
+    { "cmd": "skills",     "desc": "View skills",                 "route": "portfolio/#skills" },
+    { "cmd": "certs",      "desc": "View certifications",         "route": "portfolio/#certs" },
+    { "cmd": "contact",    "desc": "Get in touch",                "route": "portfolio/#contact" },
     { "cmd": "whoami",     "desc": "About ROOT",                  "route": null },
     { "cmd": "clear",      "desc": "Clear terminal",              "route": null },
     { "cmd": "help",       "desc": "List all commands",           "route": null }

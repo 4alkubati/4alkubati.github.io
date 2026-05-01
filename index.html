@@ -16,7 +16,7 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-      background: #020403;
+      background: #000000;
     }
 
     /* ── TERMINAL WINDOW ── */
@@ -38,19 +38,19 @@
       gap: 8px;
       margin-bottom: 20px;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(95,46,27,0.2);
+      border-bottom: 1px solid rgba(0,255,65,0.15);
     }
     .term-dot {
       width: 10px; height: 10px;
       border-radius: 50%;
     }
-    .term-dot-r { background: #5F2E1B; }
-    .term-dot-y { background: #7a5030; }
-    .term-dot-g { background: #39ff8a; opacity: .5; }
+    .term-dot-r { background: #003d1a; }
+    .term-dot-y { background: #006b25; }
+    .term-dot-g { background: #00ff41; opacity: .9; }
     .term-title {
       font-family: var(--font-mono);
       font-size: 11px;
-      color: rgba(95,46,27,0.5);
+      color: rgba(0,255,65,0.35);
       letter-spacing: 2px;
       margin-left: 8px;
     }
@@ -65,16 +65,16 @@
       padding-bottom: 12px;
     }
     #term-output::-webkit-scrollbar { width: 3px; }
-    #term-output::-webkit-scrollbar-thumb { background: rgba(95,46,27,0.3); }
+    #term-output::-webkit-scrollbar-thumb { background: rgba(0,255,65,0.2); }
 
     /* line types */
-    .term-line        { color: #5F2E1B; display: block; }
-    .term-line.bright { color: #a05030; }
-    .term-line.white  { color: #c8c4bc; }
-    .term-line.muted  { color: #4a4540; }
-    .term-line.warn   { color: #7a3a20; }
-    .term-line.error  { color: #cc3300; }
-    .term-line.prompt { color: #a05030; }
+    .term-line        { color: rgba(0,255,65,0.5); display: block; }
+    .term-line.bright { color: #00ff41; }
+    .term-line.white  { color: #ccffdd; }
+    .term-line.muted  { color: rgba(0,255,65,0.28); }
+    .term-line.warn   { color: rgba(0,255,65,0.55); }
+    .term-line.error  { color: #ff3333; }
+    .term-line.prompt { color: #00ff41; }
 
     /* input row */
     .term-input-row {
@@ -82,12 +82,12 @@
       align-items: center;
       gap: 10px;
       padding-top: 12px;
-      border-top: 1px solid rgba(95,46,27,0.15);
+      border-top: 1px solid rgba(0,255,65,0.12);
     }
     .term-prompt-sym {
       font-family: var(--font-mono);
       font-size: 13px;
-      color: #a05030;
+      color: #00ff41;
       white-space: nowrap;
     }
     #term-input {
@@ -97,8 +97,8 @@
       outline: none;
       font-family: var(--font-mono);
       font-size: 13px;
-      color: #c8c4bc;
-      caret-color: #a05030;
+      color: #00ff41;
+      caret-color: #00ff41;
     }
 
     /* skip counter */
@@ -106,13 +106,13 @@
       display: none;
       font-family: var(--font-mono);
       font-size: 10px;
-      color: #3a3530;
+      color: rgba(0,255,65,0.22);
       letter-spacing: 1px;
       margin-top: 10px;
       cursor: pointer;
       transition: color .2s;
     }
-    #skip-counter:hover { color: #a05030; }
+    #skip-counter:hover { color: #00ff41; }
 
     /* skip button */
     #skip-btn {
@@ -122,19 +122,27 @@
       font-family: var(--font-mono);
       font-size: 10px;
       letter-spacing: 2px;
-      color: #3a3530;
+      color: rgba(0,255,65,0.3);
       background: none;
-      border: 1px solid rgba(95,46,27,0.2);
+      border: 1px solid rgba(0,255,65,0.15);
       padding: 6px 14px;
       cursor: pointer;
       transition: color .2s, border-color .2s;
       text-transform: uppercase;
     }
-    #skip-btn:hover { color: #a05030; border-color: rgba(95,46,27,0.5); }
+    #skip-btn:hover { color: #00ff41; border-color: rgba(0,255,65,0.5); }
 
+    /* ── MOBILE: center input in viewport ── */
     @media (max-width: 600px) {
-      #terminal-wrap { padding: 20px 16px 16px; }
-      #term-output { font-size: 12px; }
+      #terminal-wrap {
+        height: auto;
+        padding: 20px 16px 16px;
+      }
+      #term-output {
+        font-size: 12px;
+        max-height: 55vh;
+        flex: none;
+      }
     }
   </style>
 </head>
@@ -159,4 +167,9 @@
       <input id="term-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="type a command...">
     </div>
 
-    <div id="skip-counter" onclick="skipToPortfolio()"></d
+    <div id="skip-counter" onclick="skipToPortfolio()"></div>
+  </div>
+
+  <script src="js/terminal.js"></script>
+</body>
+</html>

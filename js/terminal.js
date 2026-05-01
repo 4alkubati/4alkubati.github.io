@@ -60,7 +60,7 @@ function startSkipTimer() {
     updateSkipDisplay();
     if (skipCountdown <= 0) {
       clearInterval(skipTimer);
-      navigate('pages/portfolio.html');
+      navigate('portfolio/');
     }
   }, 1000);
 }
@@ -164,7 +164,7 @@ function wait(ms) {
 /* ── SKIP BUTTON ── */
 function skipToPortfolio() {
   cancelSkip();
-  navigate('pages/portfolio.html');
+  navigate('portfolio/');
 }
 
 /* ── START ── */

@@ -57,14 +57,20 @@ function renderProjects(projects, containerId) {
   const el = document.getElementById(containerId);
   if (!el || !projects) return;
 
-  el.innerHTML = projects.map(p => `
-    <div class="card proj-card">
+  el.innerHTML = projects.map(p => {
+    const inner = `
       <div class="proj-tag">${p.tag}</div>
       <div class="proj-title">${p.title}</div>
       <div class="proj-desc">${p.desc}</div>
-      ${p.link ? `<a class="proj-arrow" href="${p.link}" target="_blank" rel="noopener">→</a>` : '<div class="proj-arrow">→</div>'}
-    </div>
-  `).join('');
+      ${p.link
+        ? `<span class="proj-arrow">→</span>`
+        : `<span class="proj-status">${p.status || 'WIP'}</span>`
+      }
+    `;
+    return p.link
+      ? `<a class="card proj-card" href="${p.link}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="card proj-card proj-no-link">${inner}</div>`;
+  }).join('');
 }
 
 function renderSkills(skills, containerId) {

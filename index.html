@@ -23,8 +23,8 @@
     #terminal-wrap {
       width: 100%;
       max-width: 780px;
-      height: 100vh;
-      max-height: 100vh;
+      height: auto;
+      max-height: 90vh;
       display: flex;
       flex-direction: column;
       padding: 32px 24px 24px;
@@ -57,12 +57,12 @@
 
     /* output area */
     #term-output {
-      flex: 1;
       overflow-y: auto;
       font-family: var(--font-mono);
       font-size: 13px;
       line-height: 1.9;
       padding-bottom: 12px;
+      max-height: 65vh;
     }
     #term-output::-webkit-scrollbar { width: 3px; }
     #term-output::-webkit-scrollbar-thumb { background: rgba(0,255,65,0.2); }
@@ -132,17 +132,9 @@
     }
     #skip-btn:hover { color: #00ff41; border-color: rgba(0,255,65,0.5); }
 
-    /* ── MOBILE: center input in viewport ── */
     @media (max-width: 600px) {
-      #terminal-wrap {
-        height: auto;
-        padding: 20px 16px 16px;
-      }
-      #term-output {
-        font-size: 12px;
-        max-height: 55vh;
-        flex: none;
-      }
+      #terminal-wrap { padding: 20px 16px 16px; }
+      #term-output { font-size: 12px; max-height: 50vh; }
     }
   </style>
 </head>

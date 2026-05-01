@@ -355,18 +355,22 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // Load content and render all sections dynamically
     document.addEventListener('DOMContentLoaded', async () => {
+      // Sidebar runs immediately — never blocked by content fetch
+      initSidebar();
+      initScrollHighlight(['hero','projects','skills','languages','certs','contact']);
+
       const content = await loadContent();
       if (!content) return;
 
-      // Hero bio
       document.getElementById('hero-bio').textContent = content.meta.bio;
-
-      // Render sections from JSON
       renderProjects(content.projects, 'projects-container');
       renderSkills(content.skills, 'skills-container');
       renderLanguages(content.languages, 'languages-container');
       renderCerts(content.certifications, 'certs-container');
-
-      // Init sidebar + scroll highlight
+      initContactForm(content.meta.formspree);
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

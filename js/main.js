@@ -3,8 +3,8 @@
    ============================================================ */
 
 /* ── CONTENT LOADER ── */
-// Path to content.json relative to pages/ folder
-const CONTENT_PATH = '../data/content.json';
+// Root-relative path — works from any subdirectory
+const CONTENT_PATH = '/data/content.json';
 
 async function loadContent() {
   try {

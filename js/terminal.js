@@ -11,7 +11,7 @@ let skipCountdown = skipSeconds;
 async function init() {
   // Load content.json
   try {
-    const res = await fetch('../data/content.json');
+    const res = await fetch('/data/content.json');
     content = await res.json();
   } catch (e) {
     print('// ERROR: Failed to load content data.', 'error');

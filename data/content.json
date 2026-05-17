@@ -26,7 +26,7 @@
       "tag": "Entrepreneurship",
       "desc": "Service marketplace connecting clients to professionals across any category. Mobile-first, built from scratch.",
       "status": "In Progress",
-      "link": null
+      "link": "https://www.swingbyy.com"
     },
     {
       "id": "automation",
@@ -43,6 +43,14 @@
       "desc": "Self-directed research, CTF practice, network scanning, and vulnerability analysis. Ongoing.",
       "status": "Ongoing",
       "link": null
+    },
+    {
+      "id": "greenland",
+      "title": "Greenland Lawn Care",
+      "tag": "Web Development",
+      "desc": "Full business website for a local lawn care company. Clean design, service listings, and online booking.",
+      "status": "Live",
+      "link": "https://greenlandlawncare.ca"
     },
     {
       "id": "portfolio",

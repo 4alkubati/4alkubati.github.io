@@ -10,66 +10,48 @@
   <link rel="stylesheet" href="../css/style.css">
   <style>
     body {
-      display: flex;
+      display: block;
       height: 100vh;
       overflow: hidden;
-      flex-direction: row-reverse;
     }
 
-    /* ── SIDEBAR ── */
+    /* ── SIDEBAR — fixed overlay drawer on all screen sizes ── */
     .sidebar {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
       width: 230px;
-      min-width: 230px;
       background: #0a0c0b;
-      border-left: 2px solid rgba(95,46,27,0.18);
+      border-left: 2px solid rgba(95,46,27,0.25);
       display: flex;
       flex-direction: column;
-      transition: width .3s ease, min-width .3s ease;
-      position: relative;
-      flex-shrink: 0;
-      z-index: 100;
+      z-index: 500;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+      box-shadow: -8px 0 40px rgba(2,4,3,0.9);
     }
-    .sidebar.collapsed { width: 52px; min-width: 52px; }
+    .sidebar.open { transform: translateX(0); }
 
+    /* ── TOGGLE TAB — always visible on right edge ── */
     #sb-toggle {
-      position: absolute;
-      top: 50%; left: -16px;
+      position: fixed;
+      top: 50%;
+      right: 0;
       transform: translateY(-50%);
-      width: 32px; height: 32px;
+      width: 26px; height: 56px;
       background: #0a0c0b;
       border: 1px solid rgba(95,46,27,0.4);
-      border-radius: 2px;
+      border-right: none;
+      border-radius: 4px 0 0 4px;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       color: #a05030;
-      font-size: 11px;
-      z-index: 200;
+      font-size: 10px;
+      z-index: 501;
       font-family: var(--font-mono);
-      transition: background .2s, box-shadow .2s;
+      transition: right .3s ease, background .2s, box-shadow .2s;
     }
-    #sb-toggle:hover { background: rgba(95,46,27,0.1); box-shadow: 0 0 12px rgba(95,46,27,0.25); }
-    .sidebar.collapsed #sb-toggle .tog-icon { transform: rotate(180deg); display: inline-block; }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        position: fixed;
-        top: 0; right: 0; bottom: 0;
-        width: 210px !important; min-width: 210px !important;
-        background: #0a0c0b !important;
-        box-shadow: -6px 0 60px rgba(2,4,3,0.98);
-        z-index: 1000;
-        transform: translateX(0);
-        transition: transform .3s ease;
-        border-left: 2px solid rgba(95,46,27,0.35);
-      }
-      .sidebar.collapsed { transform: translateX(100%); }
-      #sb-toggle {
-        left: -42px; top: 20px; transform: none;
-        width: 38px; height: 38px; font-size: 14px;
-        background: #0a0c0b !important;
-      }
-      .sidebar.collapsed .tog-icon { transform: none !important; }
-    }
+    #sb-toggle:hover { background: rgba(95,46,27,0.15); box-shadow: -4px 0 16px rgba(95,46,27,0.3); }
+    #sb-toggle.open { right: 230px; }
 
     .sb-head {
       padding: 32px 22px 24px;
@@ -130,7 +112,7 @@
     .sidebar.collapsed .sb-foot { opacity: 0; }
 
     /* ── MAIN ── */
-    .main { flex: 1; overflow-y: auto; background: var(--col-bg); }
+    .main { width: 100%; height: 100vh; overflow-y: auto; background: var(--col-bg); }
     .main::-webkit-scrollbar { width: 4px; }
     .main::-webkit-scrollbar-track { background: #0a0c0b; }
     .main::-webkit-scrollbar-thumb { background: rgba(95,46,27,0.2); border-radius: 2px; }
@@ -190,7 +172,7 @@
     .proj-card { cursor: pointer; }
     .proj-tag { font-family: var(--font-mono); font-size: 9px; color: rgba(95,46,27,0.6); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
     .proj-title { font-size: 18px; font-weight: 600; color: var(--col-text); margin-bottom: 10px; letter-spacing: .5px; }
-    .proj-desc { font-size: 13px; color: #6a6560; line-height: 1.7; font-weight: 300; }
+    .proj-desc { font-size: 13px; color: #a8a39d; line-height: 1.7; font-weight: 300; }
     .proj-arrow { position: absolute; bottom: 18px; right: 20px; font-family: var(--font-mono); font-size: 14px; color: rgba(95,46,27,0.25); transition: color .2s; text-decoration: none; }
     .proj-card:hover .proj-arrow { color: #a05030; }
     .proj-status { position: absolute; bottom: 18px; right: 20px; font-family: var(--font-mono); font-size: 9px; color: rgba(95,46,27,0.45); letter-spacing: 2px; text-transform: uppercase; }
@@ -257,11 +239,13 @@
 </head>
 <body>
 
+  <!-- SIDEBAR TOGGLE — lives outside sidebar so it's always visible -->
+  <button id="sb-toggle" aria-label="Toggle sidebar">
+    <span class="tog-icon">◀</span>
+  </button>
+
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
-    <button id="sb-toggle" aria-label="Toggle sidebar">
-      <span class="tog-icon">▶</span>
-    </button>
     <div class="sb-head">
       <a class="logo-mark" href="../index.html">ROOT</a>
       <div class="status"><span class="status-dot"></span><span>AVAILABLE</span></div>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROOT//TERMINAL — Markets</title>
+  <meta name="description" content="Live crypto, market, and sentiment terminal.">
+  <link rel="icon" type="image/png" href="/favicon2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/terminal.css">
+</head>
+<body class="term-body">
+
+  <!-- ── TOP BAR ── -->
+  <header class="tb">
+    <a class="tb-logo" href="../portfolio/" title="Back to portfolio">ROOT<span class="rust">//</span>TERMINAL</a>
+    <div class="tb-right">
+      <span class="tb-clock mono" id="tb-clock">--:--:-- UTC</span>
+      <span class="tb-status mono"><span class="status-dot" id="conn-dot"></span><span id="conn-label">CONNECTING</span></span>
+      <a class="tb-back mono" href="../portfolio/">&larr; PORTFOLIO</a>
+    </div>
+  </header>
+
+  <!-- ── BTC MACRO BANNER (persistent across all tabs) ── -->
+  <div class="macro" id="macro-banner" data-state="loading">
+    <span class="macro-tag mono" id="macro-tag">// SCANNING MACRO SIGNAL…</span>
+    <span class="macro-detail mono" id="macro-detail"></span>
+  </div>
+
+  <main class="term-main">
+
+    <!-- ── TAB NAV ── -->
+    <nav class="tabs" id="tabs" role="tablist">
+      <button class="tab active" data-tab="crypto"    role="tab">CRYPTO</button>
+      <button class="tab"        data-tab="market"    role="tab">MARKET</button>
+      <button class="tab"        data-tab="sentiment" role="tab">SENTIMENT</button>
+      <button class="tab"        data-tab="trending"  role="tab">TRENDING</button>
+      <button class="tab"        data-tab="log"       role="tab">LOG</button>
+    </nav>
+
+    <!-- ── CRYPTO ── -->
+    <section class="panel active" id="panel-crypto" role="tabpanel">
+      <div class="panel-head">
+        <span class="sec-num">// 01</span>
+        <span class="sec-title">Top 10 by Market Cap</span>
+        <div class="sec-line"></div>
+        <span class="panel-meta mono" id="crypto-meta">CoinGecko · 60s</span>
+      </div>
+      <div class="table-wrap" id="crypto-body">
+        <div class="skeleton-rows" data-rows="10"></div>
+      </div>
+    </section>
+
+    <!-- ── MARKET ── -->
+    <section class="panel" id="panel-market" role="tabpanel">
+      <div class="panel-head">
+        <span class="sec-num">// 02</span>
+        <span class="sec-title">Equities — SPY · QQQ · NVDA</span>
+        <div class="sec-line"></div>
+        <span class="panel-meta mono" id="market-meta">Finnhub · 30s</span>
+      </div>
+      <div id="market-body">
+        <div class="skeleton-rows" data-rows="3"></div>
+      </div>
+    </section>
+
+    <!-- ── SENTIMENT ── -->
+    <section class="panel" id="panel-sentiment" role="tabpanel">
+      <div class="panel-head">
+        <span class="sec-num">// 03</span>
+        <span class="sec-title">Market Sentiment</span>
+        <div class="sec-line"></div>
+        <span class="panel-meta mono" id="sentiment-meta">Alt.me · CoinGecko</span>
+      </div>
+      <div class="sentiment-grid" id="sentiment-body">
+        <div class="skeleton-rows" data-rows="2"></div>
+      </div>
+    </section>
+
+    <!-- ── TRENDING ── -->
+    <section class="panel" id="panel-trending" role="tabpanel">
+      <div class="panel-head">
+        <span class="sec-num">// 04</span>
+        <span class="sec-title">Trending Right Now</span>
+        <div class="sec-line"></div>
+        <span class="panel-meta mono" id="trending-meta">CoinGecko · 5m</span>
+      </div>
+      <div class="trend-grid" id="trending-body">
+        <div class="skeleton-rows" data-rows="7"></div>
+      </div>
+    </section>
+
+    <!-- ── LOG ── -->
+    <section class="panel" id="panel-log" role="tabpanel">
+      <div class="panel-head">
+        <span class="sec-num">// 05</span>
+        <span class="sec-title">Event Log</span>
+        <div class="sec-line"></div>
+        <span class="panel-meta mono">localStorage</span>
+      </div>
+
+      <form class="log-form" id="log-form">
+        <input class="log-in" type="date" id="log-date" required title="Date">
+        <input class="log-in log-grow" type="text" id="log-event" placeholder="Event — e.g. CPI print, ETF approval…" required>
+        <input class="log-in log-ticker" type="text" id="log-ticker" placeholder="TICKER" maxlength="8">
+        <select class="log-in" id="log-impact" title="Impact">
+          <option value="bull">BULL</option>
+          <option value="bear">BEAR</option>
+          <option value="neutral" selected>NEUTRAL</option>
+        </select>
+        <button class="log-add mono" type="submit">+ LOG</button>
+      </form>
+
+      <div class="log-list" id="log-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="term-foot mono">
+    // ROOT//TERMINAL · data is informational only, not financial advice · free public APIs
+  </footer>
+
+  <script src="../js/root-terminal.js"></script>
+</body>
+</html>

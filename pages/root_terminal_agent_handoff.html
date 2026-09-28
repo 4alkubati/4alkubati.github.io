@@ -1,0 +1,129 @@
+
+<h2 class="sr-only">ROOT//TERMINAL agent handoff document</h2>
+<div style="font-family: var(--font-mono); padding: 1rem 0;">
+
+  <div style="border-left: 3px solid #c45c00; padding-left: 1rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 4px;">PROJECT</p>
+    <p style="font-size: 20px; font-weight: 500; margin: 0; color: var(--color-text-primary);">ROOT//TERMINAL</p>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 4px 0 0;">Embed target: 4alkubati.com — single React component, all free APIs</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 1.5rem;">
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Stack</p>
+      <p style="font-size: 14px; font-weight: 500; margin: 0;">React + Axios + Recharts</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Output</p>
+      <p style="font-size: 14px; font-weight: 500; margin: 0;">RootTerminal.jsx (single file)</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Budget</p>
+      <p style="font-size: 14px; font-weight: 500; margin: 0;">$0 — free APIs only</p>
+    </div>
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 4px;">Hosting</p>
+      <p style="font-size: 14px; font-weight: 500; margin: 0;">GitHub Pages + Cloudflare</p>
+    </div>
+  </div>
+
+  <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Design System</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13px;">
+      <div><span style="color: var(--color-text-secondary);">Background</span><br><code style="font-family: var(--font-mono);">#0a0a0a</code></div>
+      <div><span style="color: var(--color-text-secondary);">Panels</span><br><code style="font-family: var(--font-mono);">#111111</code></div>
+      <div><span style="color: var(--color-text-secondary);">Accent</span><br><code style="font-family: var(--font-mono);">#c45c00</code></div>
+      <div><span style="color: var(--color-text-secondary);">Glow</span><br><code style="font-family: var(--font-mono);">#ff7a1a</code></div>
+      <div><span style="color: var(--color-text-secondary);">Text</span><br><code style="font-family: var(--font-mono);">#e8d5c0</code></div>
+      <div><span style="color: var(--color-text-secondary);">Fonts</span><br><code style="font-family: var(--font-mono);">Orbitron + Share Tech Mono</code></div>
+    </div>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 12px 0 0;">Scanline overlay. No white. Border-radius max 2px. No gradients except subtle panel edges.</p>
+  </div>
+
+  <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Tabs to build</p>
+    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="color: #c45c00; min-width: 110px; font-weight: 500;">CRYPTO</span>
+        <span style="color: var(--color-text-secondary);">Top 10 coins by market cap, 24h % change, price — CoinGecko</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="color: #c45c00; min-width: 110px; font-weight: 500;">MARKET</span>
+        <span style="color: var(--color-text-secondary);">SPY, QQQ, NVDA live quotes — Finnhub (free key required)</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="color: #c45c00; min-width: 110px; font-weight: 500;">SENTIMENT</span>
+        <span style="color: var(--color-text-secondary);">Fear & Greed index + BTC dominance % — Alternative.me + CoinGecko /global</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="color: #c45c00; min-width: 110px; font-weight: 500;">TRENDING</span>
+        <span style="color: var(--color-text-secondary);">CoinGecko trending coins right now — /search/trending</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="color: #c45c00; min-width: 110px; font-weight: 500;">LOG</span>
+        <span style="color: var(--color-text-secondary);">Manual event logger — date, event, ticker, impact. Stored in localStorage</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">API sources + rules</p>
+    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px; color: var(--color-text-secondary); padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary);">
+        <span>Source</span><span>Endpoint</span><span>Polling</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px;">
+        <span>CoinGecko</span><span style="color: var(--color-text-secondary);">/coins/markets</span><span>Every 60s</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px;">
+        <span>CoinGecko</span><span style="color: var(--color-text-secondary);">/global (BTC dom)</span><span>Every 60s</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px;">
+        <span>Alternative.me</span><span style="color: var(--color-text-secondary);">/fng/</span><span>Every 5 min</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px;">
+        <span>CoinCap WS</span><span style="color: var(--color-text-secondary);">wss://ws.coincap.io</span><span>Live BTC/ETH</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 12px;">
+        <span>Finnhub</span><span style="color: var(--color-text-secondary);">/quote SPY,QQQ,NVDA</span><span>Every 30s</span>
+      </div>
+    </div>
+    <div style="margin-top: 12px; padding: 8px 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 12px; color: var(--color-text-secondary);">
+      Finnhub key → store as <code>REACT_APP_FINNHUB_KEY</code> in .env — get free at finnhub.io
+    </div>
+  </div>
+
+  <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">BTC macro signal logic</p>
+    <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px;">
+      <div style="padding: 8px 12px; border-left: 3px solid #00ff88; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;">
+        BTC 24h change &gt; 0 → green banner top of terminal → <strong>RISK ON</strong>
+      </div>
+      <div style="padding: 8px 12px; border-left: 3px solid #ff3a3a; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;">
+        BTC 24h change &lt; 0 → red banner top of terminal → <strong>RISK OFF</strong>
+      </div>
+      <div style="padding: 8px 12px; border-left: 3px solid #ffcc00; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;">
+        BTC dominance &gt; 55% → yellow note → <strong>altcoins bleeding to BTC</strong>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 10px 0 0;">This banner persists across all tabs — always visible at the top.</p>
+  </div>
+
+  <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+    <p style="font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Deliverable checklist for agent</p>
+    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>Single file: <code>RootTerminal.jsx</code> — fully self-contained</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>All API calls in one <code>api.js</code> layer with error handling + fallback states</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>BTC macro banner always visible above tabs</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>5 tabs: CRYPTO / MARKET / SENTIMENT / TRENDING / LOG</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>CoinCap WebSocket for live BTC price (not polling)</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>Loading skeletons for each panel — no blank screens</label>
+      <label style="display: flex; gap: 10px; align-items: flex-start;"><i class="ti ti-square" aria-hidden="true" style="color: #c45c00; margin-top: 2px;"></i>Embed instructions: how to drop into 4alkubati.com</label>
+    </div>
+  </div>
+
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem; font-size: 12px; color: var(--color-text-secondary);">
+    <strong style="color: var(--color-text-primary);">Before agent starts:</strong> Get free Finnhub API key at finnhub.io → add as REACT_APP_FINNHUB_KEY in .env
+  </div>
+
+</div>

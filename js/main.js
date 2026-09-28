@@ -22,8 +22,13 @@ function initSidebar() {
   const toggle  = document.getElementById('sb-toggle');
   if (!sidebar || !toggle) return;
 
+  // Sidebar starts hidden — user opens it with the tab button
+  const icon = toggle.querySelector('.tog-icon');
+
   toggle.addEventListener('click', () => {
-    sidebar.classList.toggle('collapsed');
+    const isOpen = sidebar.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (icon) icon.textContent = isOpen ? '▶' : '◀';
   });
 }
 

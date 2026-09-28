@@ -11,6 +11,7 @@
   },
   "commands": [
     { "cmd": "portfolio",  "desc": "View full portfolio",         "route": "portfolio/" },
+    { "cmd": "markets",    "desc": "Live markets terminal",       "route": "terminal/" },
     { "cmd": "projects",   "desc": "Browse projects",             "route": "portfolio/#projects" },
     { "cmd": "skills",     "desc": "View skills",                 "route": "portfolio/#skills" },
     { "cmd": "certs",      "desc": "View certifications",         "route": "portfolio/#certs" },
